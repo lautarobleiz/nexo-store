@@ -11,7 +11,7 @@ export function Navbar (){
                 </div>
                 <div className="navbar-buttons-container">
                     <Button className="bg-blue-300 hover:bg-blue-400 text-gray-700 border border-gray-700">Iniciar sesión</Button>
-                    <Button className="bg-blue-300 hover:bg-blue-400 text-gray-700 border border-gray-600">Registrarse</Button>
+                    <Button className="bg-blue-300 hover:bg-blue-400 text-gray-700 border border-gray-700">Registrarse</Button>
                 </div>
             </div>    
         </>
