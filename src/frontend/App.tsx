@@ -7,7 +7,7 @@ function App() {
       <Navbar />
       <div className="app-main-container">    
         <div className="app-main-items-grid">
-
+          
         </div>
       </div>
     </>

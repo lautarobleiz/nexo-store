@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button"
 import '../styles/navbar.css'
 
 export function Navbar (){
@@ -9,8 +10,8 @@ export function Navbar (){
                     <p className='navbar-store-description'>La mejor electrónica, al mejor precio.</p>
                 </div>
                 <div className="navbar-buttons-container">
-                    <button className="navbar-buttons">Iniciar sesión</button>
-                    <button className="navbar-buttons">Registrarse</button>
+                    <Button>Iniciar sesión</Button>
+                    <Button>Registrarse</Button>
                 </div>
             </div>    
         </>
