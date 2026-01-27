@@ -1,5 +1,5 @@
 body{
-    background-color: #dbdbdb;
+    background-color: #bcddff;
     font-family: 'Google Sans', sans-serif;
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body{
     width: 100%;
 }
 
-.app-main-items-grid{
+.app-main-grid-container{
     display: flex;
     align-items: center;
     justify-content: center;

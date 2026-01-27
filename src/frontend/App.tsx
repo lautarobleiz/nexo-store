@@ -6,8 +6,10 @@ function App() {
     <>
       <div className="app-main-container">    
         <Navbar />
-        <div className="app-main-items-grid">
-          
+        <div className="app-main-grid-container">
+          <div className="app-main-items-grid bg-yellow-200">
+            
+          </div>
         </div>
       </div>
     </>
