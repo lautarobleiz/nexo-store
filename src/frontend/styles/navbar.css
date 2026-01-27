@@ -6,11 +6,8 @@
     padding-left: 1rem;
     padding-right: 1rem;
     border: 2px solid rgb(136, 138, 197);
-}
-
-.navbar-store-name{
-    font-size: 1.8rem;
-    color: #ffdc41;
+    width: 100vw;
+    border-radius: 0 0 15px 15px;
 }
 
 .navbar-buttons-container{
@@ -24,14 +21,6 @@
     border: none;
     border-radius: 0.3rem;
     cursor: pointer;
-}
-
-.navbar-buttons:hover{
-    background-color: #e2e2e2;
-}
-
-.navbar-buttons:active{
-    background-color: #c2c2c2;
 }
 
 .navbar-slogan{
