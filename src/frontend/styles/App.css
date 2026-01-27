@@ -1,0 +1,18 @@
+body{
+    background-color: #a3c9ff;
+    font-family: 'Google Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical */
+}
+
+.app-main-container{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #ffffff;
+    width: 80vw;  /* 80% del ancho del viewport */
+    height: 80vh; /* 80% del alto del viewport */
+}
