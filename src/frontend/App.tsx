@@ -2,7 +2,7 @@ import { Navbar } from './components/navbar'
 import { Item } from './components/item'
 import './styles/App.css'
 
-function App() {
+export const App = () => {
   return (
     <>
       <div className="app-main-container">    
@@ -18,5 +18,3 @@ function App() {
     </>
   )
 }
-
-export default App

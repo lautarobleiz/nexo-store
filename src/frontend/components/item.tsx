@@ -3,7 +3,7 @@ interface ItemProps {
     price: number;
 }
 
-{/* Los parametros que recibe el componente deben estar en el orden de la interface */}
+{/* Los parametros que recibe el componente deben pasarse en el mismo orden que la interface */}
 export const Item = (props: ItemProps) => {
     return (
         <div className="bg-slate-100 p-6 rounded-lg shadow-sm border">

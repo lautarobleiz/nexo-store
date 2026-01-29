@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import '../styles/navbar.css'
 
-export function Navbar (){
+export const Navbar = () => {
     return (
         <>
             <div className='navbar-main shadow-lg/30'>
