@@ -1,6 +1,7 @@
 interface ItemProps {
     title: string;
     price: number;
+    description: string;
 }
 
 {/* Los parametros que recibe el componente deben pasarse en el mismo orden que la interface */}

@@ -9,9 +9,10 @@ export const App = () => {
         <Navbar />
         <div className="app-main-grid-container">
           <div className="grid grid-cols-3 gap-4 w-full p-4">
-            <Item title="Item A" price={500} />
-            <Item title="Item B" price={2000} />
-            <Item title="Item C" price={1500} />
+            {/* Ver como obtener los datos de la db */}
+            <Item title="Item A" price={500} description="primer item" />
+            <Item title="Item B" price={2000} description="segundo item" />
+            <Item title="Item C" price={1500} description="tercer item" />
           </div>
         </div>
       </div>
