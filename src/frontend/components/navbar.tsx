@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import '../styles/navbar.css'
+import { Link } from "react-router";
 
 export const Navbar = () => {
     return (
@@ -10,8 +11,12 @@ export const Navbar = () => {
                     <p className='navbar-store-description font-semibold text-white text-shadow-lg/20'>Sabemos de computación.</p>
                 </div>
                 <div className="navbar-buttons-container">
-                    <Button className="bg-blue-300 hover:bg-blue-400 text-gray-700 border border-gray-700">Iniciar sesión</Button>
-                    <Button className="bg-blue-300 hover:bg-blue-400 text-gray-700 border border-gray-700">Registrarse</Button>
+                    <Button asChild className="bg-blue-300 hover:bg-blue-400 text-gray-700 border border-gray-700">
+                        <Link to="/login">Iniciar sesi&oacute;n</Link>
+                    </Button>
+                    <Button asChild className="bg-blue-300 hover:bg-blue-400 text-gray-700 border border-gray-700">
+                        <Link to="/register">Registrarse</Link> 
+                    </Button>
                 </div>
             </div>    
         </>
