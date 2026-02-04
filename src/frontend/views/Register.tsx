@@ -14,7 +14,7 @@ export const Register = () => {
             <main className="flex-1 flex items-center justify-center p-4">
                 <Card className="w-fit mx-auto">
                 <CardHeader className="text-center text-2xl text-blue-500">
-                    <CardTitle>Crear una cuenta</CardTitle>
+                    <CardTitle>Cre&aacute; una cuenta</CardTitle>
                 </CardHeader>
                 
                 <CardContent className="grid gap-4">
