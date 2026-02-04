@@ -17,7 +17,7 @@ export const Register = () => {
                     <CardTitle>Cre&aacute; una cuenta</CardTitle>
                 </CardHeader>
                 
-                <CardContent className="grid gap-4">
+                <CardContent className="grid gap-4 mb-8">
                     <div className="grid gap-2">
                     <Label>Correo</Label>
                     <Input className="w-80" placeholder="correo@ejemplo.com" />
