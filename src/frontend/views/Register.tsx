@@ -3,7 +3,7 @@ import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { Button } from "../components/ui/button";
 import { Navbar } from "../components/navbar";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useState } from "react";
 import { register } from "../../server/listeners/register";
 import { validateEmail, validateUsername, validatePassword, comparePasswords } from "../utils/validations";
@@ -14,40 +14,42 @@ export const Register = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    const [alertDialog, setAlertDialog] = useState({title: "", description: ""});
+    const [alertDialog, setAlertDialog] = useState({title: "", description: "", success: true});
     const [isDialogOpen, setIsDialogOpen] = useState(false);
+    const navigate = useNavigate();
 
 
     const storeData = async () => {
-        //Hacer validaciones
+        
         const emailValid = validateEmail(email);
         const usernameValid = validateUsername(username);
         const passwordValid = validatePassword(password);
         const passwordsMatch = comparePasswords(password, confirmPassword);
 
         if (!emailValid){
-            setAlertDialog({title: "Datos inválidos", description: "El email ingresado debe tener un formato válido (ej: usuario@dominio.com)"});
+            setAlertDialog({title: "Datos inválidos", description: "El email ingresado debe tener un formato válido (ej: usuario@dominio.com)", success: false});
             setIsDialogOpen(true);
             return;
         }else if (!passwordValid){
-            setAlertDialog({title: "Datos inválidos", description:"La contraseña ingresada debe tener como mínimo 6 caracteres y una mayúscula."})
+            setAlertDialog({title: "Datos inválidos", description:"La contraseña ingresada debe tener como mínimo 6 caracteres y una mayúscula.", success: false})
             setIsDialogOpen(true);
             return;
         }else if (!passwordsMatch){
-            setAlertDialog({title: "Datos inválidos", description:"Las contraseñas ingresadas deben ser iguales."})
+            setAlertDialog({title: "Datos inválidos", description:"Las contraseñas ingresadas deben ser iguales.", success: false})
             setIsDialogOpen(true);
             return;
         }else if (!usernameValid){
-            setAlertDialog({title: "Datos inválidos", description:"El nombre de usuario debe tener un mínimo de 6 caracteres."})
+            setAlertDialog({title: "Datos inválidos", description:"El nombre de usuario debe tener un mínimo de 6 caracteres.", success: false})
             setIsDialogOpen(true);
             return;
         }
         if (!register(email, username, password, confirmPassword)){
-            setAlertDialog({title: "Datos inválidos", description:"Uno o varios datos ingresados son inválidos. Por favor, revisalos y volvé a intentar."})
+            setAlertDialog({title: "Datos inválidos", description:"Uno o varios datos ingresados son inválidos. Por favor, revisalos y volvé a intentar.", success: false})
             setIsDialogOpen(true);
             return;
         }
-        setAlertDialog({title: "¡Usuario registrado!", description:"Redirigiéndote a la página principal..."})
+
+        setAlertDialog({title: "¡Usuario registrado!", description:"Hacé click para volver al menú principal", success: true})
         setIsDialogOpen(true);
         return;
     };
@@ -96,9 +98,19 @@ export const Register = () => {
                             <AlertDialogTitle>{alertDialog.title}</AlertDialogTitle>
                             <AlertDialogDescription>{alertDialog.description}</AlertDialogDescription>
                         </AlertDialogHeader>
-                        <AlertDialogFooter>
-                            <AlertDialogAction>Aceptar</AlertDialogAction>
-                        </AlertDialogFooter>
+                        {!alertDialog.success ? (
+                            <AlertDialogFooter className="group-data-[size=sm]/alert-dialog-content:grid-cols-1 justify-items-center sm:justify-center">
+                                <AlertDialogAction  onClick={() => setIsDialogOpen(false)}>
+                                    Aceptar
+                                </AlertDialogAction>
+                            </AlertDialogFooter>
+                        ) : (
+                            <AlertDialogFooter>
+                                <AlertDialogAction className="flex justify-center" onClick={() => navigate("/")}>
+                                    Menú principal
+                                </AlertDialogAction>
+                            </AlertDialogFooter>
+                        )}
                     </AlertDialogContent>
                 </AlertDialog>
             </main>
